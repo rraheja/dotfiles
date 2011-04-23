@@ -11,8 +11,14 @@ Install
 To install on any new development machine (replace "rraheja" with username if forked):
 
 > git clone git://github.com/rraheja/dotfiles ~/dotfiles
+> OR
+> git clone git@github.com:rraheja/dotfiles.git ~/dotfiles
+
 > cd ~/dotfiles
-> install.sh
+
+> chmod +x install.sh
+
+> ./install.sh
 
 UnInstall
 ---------
@@ -20,7 +26,8 @@ UnInstall
 To uninstall:
 
 > cd ~/dotfiles
-> install.sh -d
+
+> ./install.sh -d
 
 
 Windows considerations
