@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Install dotfiles by soft linking them to their original program locations
 #
@@ -26,6 +26,8 @@ if [ ! -d "$HOME" ]
 then
 	echo Cannot find directory "$HOME"
 	exit 1;
+else
+	echo Installing dotfiles in "$HOME"
 fi
 
 for dotfile in * .[^.] .??*
@@ -34,7 +36,7 @@ do
      [ $dotfile != ".[^.]" ] && 
      [ $dotfile != ".??*" ] && 
      [ $dotfile != ".dotfiles" ] &&
-     [ $dotfile != "README.txt" ] &&
+     [ $dotfile != "README.md" ] &&
      [ $dotfile != "install.sh" ] &&
      [ $dotfile != "install.bat" ]
   then
