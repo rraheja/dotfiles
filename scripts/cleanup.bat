@@ -9,10 +9,10 @@ REM Pre-requisites: Set cleanup options once on the computer using "cleanmgr /sa
 echo Cleaning DNS entries cache
 ipconfig /flushdns
 
-echo Cleaning system using CCleaner
-D:\PortableApps\CCleaner\CCleaner /AUTO
-
 echo Cleaning system using Windows Clean Manager
 cleanmgr /sagerun:1
+
+echo Cleaning system using CCleaner
+"C:\Program Files\CCleaner\CCleaner" /AUTO
 
 echo Cleanup complete.

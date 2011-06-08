@@ -4,7 +4,7 @@ dotfiles
 Description
 -----------
 
-These are utility scripts and configuration files that make development productive. Feel free to fork if it is useful.
+These are utility scripts and configuration files that make my development productive.
 
 Install
 -------
@@ -34,4 +34,3 @@ Windows considerations
 ----------------------
 1. Use of msysGit is assumed on Windows.
 2. On Windows, scripts are "copied" and not soft linked, hence any changes made to the dotfiles should be redeployed using install.sh
-3. Windows scripts require various PortableApps applications as well as Truecrypt and Microsoft Robocopy.

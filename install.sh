@@ -12,8 +12,6 @@
 #
 # Note that in Windows the soft link will effectively copy the file.
 
-PORTABLEAPPS=/d/PortableApps
-
 if [ "$1" == "-h" ]
 then
 	echo Dotfiles by Rajesh Raheja
@@ -62,12 +60,12 @@ do
   fi
 done
 
-# Copy gVim startup files on Windows
+# Copy gVim startup files to program directory if on Windows
 
 if [ "$OS" == "Windows_NT" ] && [[ "$1" != "-d" ]]
 then
-	echo Copying "$HOME"/.vimrc to "$PORTABLEAPPS"/gVimPortable/Data/settings/_vimrc
-	cp "$HOME"/.vimrc "$PORTABLEAPPS"/gVimPortable/Data/settings/_vimrc
+	echo Copying "$HOME"/.vimrc to "/c/Program Files/Vim/_vimrc"
+	cp "$HOME"/.vimrc "/c/Program Files/Vim/_vimrc"
 fi
 
 # Finished
