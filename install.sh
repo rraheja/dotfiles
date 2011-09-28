@@ -64,8 +64,8 @@ done
 
 if [ "$OS" == "Windows_NT" ] && [[ "$1" != "-d" ]]
 then
-	echo Copying "$HOME"/.vimrc to "/c/Program Files/Vim/_vimrc"
-	cp "$HOME"/.vimrc "/c/Program Files/Vim/_vimrc"
+	echo Copying "$HOME"/.vimrc to "/c/Program Files (x86)/Vim/_vimrc"
+	cp "$HOME"/.vimrc "/c/Program Files (x86)/Vim/_vimrc"
 fi
 
 # Finished
