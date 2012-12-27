@@ -1,5 +1,5 @@
-#Schedule this using Windows Task Scheduler to run at login using the SYSTEM account
-#Change "welcome" to the password for the NAS
+REM Schedule this using Windows Task Scheduler to run at login using the SYSTEM account
+REM Change "welcome" to the password for the NAS
 
 echo %date% %time% : "%cd%\mount.bat" >> C:\cp-nas-mount.log 2>&1 
 
