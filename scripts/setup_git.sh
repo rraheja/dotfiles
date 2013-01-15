@@ -14,7 +14,7 @@ git config --global --list
 
 echo Configuring SSH access via ~/.ssh/corkscrew
 echo 'Host *' > ~/.ssh/config
-echo '  ProxyCommand ~/.ssh/corkscrew www-proxy.us.oracle.com 80 %h %p' >> ~/.ssh/config
+echo '  ProxyCommand ~/bin/corkscrew www-proxy.us.oracle.com 80 %h %p' >> ~/.ssh/config
 
 echo Environment setup complete. Testing github ssh access...
 ssh -T git@github.com
