@@ -15,7 +15,7 @@
 if [ "$1" == "-h" ]
 then
 	echo Dotfiles by Rajesh Raheja
-	echo Usage: install [-d]
+	echo Usage: ./install.sh [-d]
 	exit;
 fi
 
@@ -33,10 +33,8 @@ do
   if [ $dotfile != ".git" ] && 
      [ $dotfile != ".[^.]" ] && 
      [ $dotfile != ".??*" ] && 
-     [ $dotfile != ".dotfiles" ] &&
      [ $dotfile != "README.md" ] &&
-     [ $dotfile != "install.sh" ] &&
-     [ $dotfile != "install.bat" ]
+     [ $dotfile != "install.sh" ]
   then
   	if [ -f "$HOME"/$dotfile ]
 	then 
@@ -76,3 +74,6 @@ then
 else
 	echo "Dotfiles successfully uninstalled."
 fi
+
+sudo ./scripts/setup_filesharing.sh
+./scripts/setup_git.sh

@@ -17,3 +17,10 @@ GIT_PS1_SHOWSTASHSTATE="true"
 GIT_PS1_SHOWUNTRACKEDFILES="true"
 # GIT_PS1_SHOWUPSTREAM="auto"
 # GIT_PS1_SHOWUPSTREAM="verbose"
+
+# Set network proxy
+
+#!/bin/sh
+export http_proxy="http://www-proxy.us.oracle.com:80"
+export https_proxy=$http_proxy
+export no_proxy="localhost, 127.0.0.1"
