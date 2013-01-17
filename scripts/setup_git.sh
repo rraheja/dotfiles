@@ -13,7 +13,7 @@ git config --global credential.helper 'cache --timeout=3600'
 git config --global --list
 
 echo Configuring SSH access via ~/.ssh/corkscrew
-echo 'Host *' > ~/.ssh/config
+echo 'Host !*.us.oracle.com !*.local !127.0.0.1 !localhost' > ~/.ssh/config
 echo '  ProxyCommand ~/bin/corkscrew www-proxy.us.oracle.com 80 %h %p' >> ~/.ssh/config
 
 echo Environment setup complete. Testing github ssh access...
