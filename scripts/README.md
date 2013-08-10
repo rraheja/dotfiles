@@ -6,13 +6,14 @@ Description
 
 Environment setup for packages and system configuration files.
 
-'backup.sh' archives files listed in 'backup\_files.list' and copies the home directories. It logs the commands for use in restoring the files and archive.
-
-'install\_packages.sh' takes in list file containing packages and installs it. Example package files are install\_nas.list for packages required for a NAS setup, and install\_workstation.list for packages required for a workstation use.
-
-'install\_crashplan.sh' downloads and installs Crashplan.
-
-'setup\_user.sh` performs user setup activities. Execute only after restoring/editing etc configuration files.
+`backup.sh` archives select /etc configuration files and copies the home directories to a backup directory location. It logs the commands to be used for restoration.
+`backup\_files.list` contains the list of /etc configuration files to backup that is used by the backup shell script.
+`install\_packages.sh` takes in list file containing packages and installs it.
+`install\_nas.list` contains packages for a home NAS server setup.
+`install\_workstation.list` contains packages for development workstation setup.
+`install\_crashplan.sh` downloads and installs Crashplan.
+`custom.sources.list` contains a list of non-official repositories required to install software packages.
+`setup\_user.sh` performs user setup activities. Execute only after restoring/editing etc configuration files.
 
 * To install a fresh workstation environment, install packages then setup user.
 
