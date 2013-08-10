@@ -3,6 +3,7 @@ clamtk
 conky-all
 curl
 dropbox
+dvdrip
 filezilla
 firefox
 gcc
@@ -14,7 +15,6 @@ gpointing-device-settings
 gufw
 handbrake-gtk
 k3b
-k9copy
 keepassx
 krdc
 mdadm

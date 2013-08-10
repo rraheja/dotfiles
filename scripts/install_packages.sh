@@ -7,15 +7,15 @@ exec 2>&1
 
 echo ==== Installing packages in $1
 
-if [ ! -f $1 ]
+if [ ! -f "$1" ]
 then
 	echo Package list file $1 not found. No changes done.
-	echo Usage: sudo ./install_packages.sh <list file containing package names>
+	echo Usage: sudo ./install_packages.sh package_list_filename
 	exit 1
 fi
 
 echo ==== Copying PPA sources and updating repository
-cp -y custom.sources.list /etc/apt/sources.list.d/
+cp -f custom.sources.list /etc/apt/sources.list.d/
 aptitude update
 
 echo ==== Upgrading system - first a safe-upgrade then full-upgrade to isolate changes
@@ -28,6 +28,6 @@ aptitude install -y -f --without-recommends --show-deps `cat "$1"`
 echo ==== Remove packages no longer needed and resolve missing dependencies
 aptitude -y autoclean
 aptitude -y --purge-unused
-aptitude -f -y --show-deps install
+aptitude -f -y install
 
 echo === Apps installation complete on `date`.

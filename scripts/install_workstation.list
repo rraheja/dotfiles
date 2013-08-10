@@ -10,6 +10,7 @@ dia
 digikam
 dolphin
 dropbox
+dvdrip
 eclipse
 everpad
 filezilla
@@ -21,12 +22,10 @@ git-gui
 gitk
 google-chrome-stable
 google-musicmanager-beta
-googleearth
+google-earth-stable
 gufw
-gvim
 handbrake-gtk
 k3b
-k9copy
 kdenlive
 kdesdk-dolphin-plugins
 keepassx
@@ -48,7 +47,7 @@ rkhunter
 skype
 smartmontools
 smplayer
-sqlite-browser
+sqlitebrowser
 ssh
 sshfs
 thunderbird

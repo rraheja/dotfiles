@@ -5,6 +5,9 @@
 exec > >(tee /tmp/setup_user.log)
 exec 2>&1
 
+# Copy certificates to root to enable password-less logins as sudo
+cp ~/.ssh/id_rsa* /root/.ssh/
+
 # Setup git
 echo Setting up Git global configuration.
 git config --global user.name  "Rajesh Raheja"
@@ -39,15 +42,15 @@ usermod -a -G vboxsf rraheja
 echo ==== Linking VM shared folder to home directories
 ln -s /media/sf_Documents ~/Documents
 
-# Setup Samba password if server
-if [ -f /etc/samba/smb.conf ]
+# Setup Samba password if server configuration found (using FTP server since /etc/samba probably always exists)
+if [ -f /etc/vsftpd.conf ]
 then
 	echo ==== Setting SAMBA server password. Enter SMB Password and press ENTER.
 	smbpasswd -a rraheja
 fi
 
-# Setup VPN server password if server
-if [ -f /etc/ppp/chap-secrets ]
+# Setup VPN server password if server configuration found
+if [ -f /etc/pptpd.conf ]
 then
 	echo ==== Setting VPN server password
 	read -p "Enter PPTPD Password and press ENTER: " PPTPD_PASSWORD
