@@ -17,10 +17,12 @@ handbrake-gtk
 k3b
 keepassx
 krdc
+libssl0.9.8
 mdadm
 minidlna
 nfs-common
 nfs-kernel-server
+nixnote
 okular
 openssh-client
 openssh-server

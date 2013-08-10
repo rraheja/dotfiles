@@ -33,8 +33,8 @@ echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/
 echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
 
 echo Installing new PPAs. To continue press ENTER.
-# Everpad
-add-apt-repository ppa:nvbn-rm/ppa
+# NixNote (Evernote for Linux)
+add-apt-repository ppa:vincent-c/nevernote
 # Handbrake
 add-apt-repository ppa:stebbins/handbrake-releases
 

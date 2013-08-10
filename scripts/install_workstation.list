@@ -12,7 +12,6 @@ dolphin
 dropbox
 dvdrip
 eclipse
-everpad
 filezilla
 firefox
 gcc
@@ -21,8 +20,8 @@ git-core
 git-gui
 gitk
 google-chrome-stable
-google-musicmanager-beta
 google-earth-stable
+google-musicmanager-beta
 gufw
 handbrake-gtk
 k3b
@@ -30,8 +29,10 @@ kdenlive
 kdesdk-dolphin-plugins
 keepassx
 krdc
+libssl0.9.8
 maven2
 nfs-common
+nixnote
 okular
 openconnect
 openssh-client
