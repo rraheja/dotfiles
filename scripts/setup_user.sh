@@ -55,14 +55,14 @@ if [ -f /etc/pptpd.conf ]
 then
 	echo ==== Setting VPN server password
 	read -p "Enter PPTPD Password and press ENTER: " PPTPD_PASSWORD
-	sed -i -e 's/\$CHANGE_ME\$/"$PPTPD_PASSWORD"/g' /etc/ppp/chap-secrets
+	sed -i -e "s/CHANGEME/$PPTPD_PASSWORD/g" /etc/ppp/chap-secrets
 fi
 
 # Setup CrashPlan server for headless configuration
 if [ -f /usr/local/crashplan/conf/ui.properties ]
 then
 	echo ==== Updating CrashPlan configuration for headless server
-	sed -i -e 's/#serviceHost=127\.0\.0\.1/serviceHost=rraheja-nas/g' /usr/local/crashplan/conf/ui.properties
+	sed -i -e 's/#serviceHost=127\.0\.0\.1/serviceHost=rraheja-nas\.local/g' /usr/local/crashplan/conf/ui.properties
 	sed -i -e 's/127\.0\.0\.1/0\.0\.0\.0/g' /usr/local/crashplan/conf/my.service.xml
 fi
 
