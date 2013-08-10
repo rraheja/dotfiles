@@ -10,6 +10,12 @@ Installation
 ------------
 To install on a new machine, clone the repository under `~/Projects/dotfiles` (or any other location):
 
+Using SSL (preferred since it does not prompt for username/password with proper key setup)
+```bash
+cd ~/Projects && git clone git@github.com:rraheja/dotfiles.git && cd dotfiles && source ./setup.sh
+````
+
+Using HTTPS (alternative to SSL)
 ```bash
 cd ~/Projects && git clone https://github.com/rraheja/dotfiles.git && cd dotfiles && source ./setup.sh
 ````
