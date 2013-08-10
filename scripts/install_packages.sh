@@ -31,6 +31,8 @@ echo "deb http://dl.google.com/linux/earth/deb/ stable main" >> /etc/apt/sources
 wget -q -O - http://www.webmin.com/jcameron-key.asc | apt-key add -
 echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
 echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
+
+echo Installing new PPAs. To continue press ENTER.
 # Everpad
 add-apt-repository ppa:nvbn-rm/ppa
 # Handbrake
