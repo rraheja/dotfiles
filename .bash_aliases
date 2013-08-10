@@ -18,9 +18,9 @@ GIT_PS1_SHOWUNTRACKEDFILES="true"
 # GIT_PS1_SHOWUPSTREAM="auto"
 # GIT_PS1_SHOWUPSTREAM="verbose"
 
-# Set network proxy
+alias ll="ls -l"
 
-#!/bin/sh
-export http_proxy="http://www-proxy.us.oracle.com:80"
-export https_proxy=$http_proxy
-export no_proxy="localhost, 127.0.0.1"
+# Set network proxy
+# export http_proxy="http://www-proxy.us.oracle.com:80"
+# export https_proxy=$http_proxy
+# export no_proxy="localhost, 127.0.0.1"

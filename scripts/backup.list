@@ -1,0 +1,13 @@
+/etc/NetworkManager/NetworkManager.conf
+/etc/exports
+/etc/mdm/Init/Default
+/etc/minidlna.conf
+/etc/network/interfaces
+/etc/ppp/chap-secrets
+/etc/ppp/pptpd-options
+/etc/pptpd.conf
+/etc/rc.local
+/etc/samba/smb.conf
+/etc/ssh/sshd_config
+/etc/sysctl.conf
+/etc/vsftpd.conf

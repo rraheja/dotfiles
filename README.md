@@ -4,56 +4,31 @@ dotfiles
 Description
 -----------
 
-These are utility scripts and configuration files that make my development productive.
+Configuration files, and their setup scripts, for a productive development environment.
 
-Install
--------
-To install on any new development machine (replace "rraheja" with username if forked):
+Installation
+------------
+To install on a new machine, clone the repository under '~/Projects/dotfiles' (or any other location):
 
-> git clone --bare git@github.com:rraheja/dotfiles.git ~/gitrepo/dotfiles.git --origin github
+```bash
+cd ~/Projects && git clone https://github.com/rraheja/dotfiles.git && cd dotfiles && source ./setup.sh
+````
 
-> git clone ~/gitrepo/dotfiles.git mywork/dotfiles
+If 'git' is not available (fresh install), use 'wget' to retrieve the repository:
 
-> cd mywork/dotfiles
-
-> chmod +x install.sh
-
-> ./install.sh
-
-This sets up the bare repository as the local source of truth, with its "origin" pointing to github.
-The "mywork/dotfiles" directory is the working repository with its "origin" pointing to the bare repository. 
-Add another remote to be able to sync changes to both the local bare source of truth, as well as github.
-
-> git remote add github git@github.com:rraheja/dotfiles.git
+````bash
+mkdir -p ~/Projects/dotfiles
+cd ~/Projects/dotfiles
+wget -O - https://github.com/rraheja/dotfiles.git | tar -xzv --strip-components 1
+source ./setup.sh
+````
+Setup creates symlinks from the home directory so any updates are immediately effective.
 
 UnInstall
 ---------
 
-To uninstall and remove broken links:
+To restore setup and remove broken links, simply remove the symlinks:
 
-> cd mywork/dotfiles
-
-> ./install.sh -d
-
-> find ~ -L -type l -delete
-
-Edit
-----
-Use the bare repository ~/gitrepo/dotfiles.git as the local source of truth
-
-> git pull github master
-
-> git pull
-
-Resolve any conflicts and commit changes.
-
-> git push
-
-> git push github master
-
-> git status
-
-Windows considerations
-----------------------
-1. Use of msysGit is assumed on Windows.
-2. On Windows, scripts are "copied" and not soft linked, hence any changes made to the dotfiles should be redeployed using install.sh
+```bash
+cd && find ~ -L -type l -delete
+```
