@@ -50,7 +50,7 @@ uppercase no
 default_color FFFFFF
 
 # Lua Load  #
-lua_load clock_rings.lua
+lua_load ~/.lua/scripts/clock_rings.lua
 lua_draw_hook_pre clock_rings
 
 TEXT
@@ -75,5 +75,5 @@ ${color D60650}${goto 100}Disk
 
 ${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
 ${color FFFFFF}${font Caviar Dreams:size=8}Processes: ${processes} ${color FFFFFF}${font Caviar Dreams:size=8}Running: ${running_processes}
-${color FFFFFF}${font Caviar Dreams:size=8}IP Address: ${addr wlan0}
-${color FFFFFF}${font Caviar Dreams:size=8}Network Speed kiBs: ${downspeed wlan0} / ${upspeed wlan0}
+${color FFFFFF}${font Caviar Dreams:size=8}IP Address: ${addr eth0}
+${color FFFFFF}${font Caviar Dreams:size=8}Network Speed kiBs: ${downspeed eth0} / ${upspeed eth0}
