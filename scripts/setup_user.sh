@@ -66,4 +66,7 @@ then
 	sed -i -e 's/127\.0\.0\.1/0\.0\.0\.0/g' /usr/local/crashplan/conf/my.service.xml
 fi
 
+# Protect key directories from "rm -rf"
+echo Protecting shared directories
+chattr +i /mnt/Share
 echo === System setup completed on `date`.
