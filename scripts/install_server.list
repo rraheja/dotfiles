@@ -1,0 +1,11 @@
+mdadm
+minidlna
+nfs-kernel-server
+openssh-server
+portmap
+pptpd
+samba
+system-config-samba
+vsftpd
+webmin
+xrdp

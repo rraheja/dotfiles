@@ -8,7 +8,7 @@ Environment setup for packages and system configuration files.
 
 `backup.sh` archives home directory and select /etc configuration files listed in `backup_files.list` to a backup directory location. It logs the commands to be used for restoration.
 
-`install_packages.sh` installs packages listed in a specified file e.g. `install_nas.list` (home NAS server setup) or `install_workstation.list` (development workstation setup).
+`install_packages.sh` installs packages listed in a specified file e.g. `install_common.list` (common productivity packages), `install_server.list` (home server setup) or `install_workstation.list` (development workstation setup).
 
 `install_crashplan.sh` downloads and installs Crashplan.
 
