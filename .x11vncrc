@@ -1,0 +1,3 @@
+forever
+rfbauth /home/rraheja/.vnc/passwd
+display :0
