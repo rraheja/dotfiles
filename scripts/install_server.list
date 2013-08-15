@@ -8,4 +8,5 @@ samba
 system-config-samba
 vsftpd
 webmin
+x11vnc
 xrdp

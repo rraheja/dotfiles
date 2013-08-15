@@ -30,6 +30,10 @@ fi
 echo Testing github ssh access...
 ssh -T git@github.com
 
+# Setup x11vnc
+echo Setting VNC password
+x11vnc -storepasswd
+
 # Setup user for sudo
 echo Adding sudo access for user
 rm -rf /etc/sudoers.d/rraheja.sudoers.list
