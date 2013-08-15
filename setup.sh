@@ -29,4 +29,7 @@ do
   fi
 done
 
+echo Start conky using : conky -c ~/.conky/conkyrc &
+echo Start x11vnc using: x11vnc --noncache
+
 echo Dotfiles setup complete on `date`.
