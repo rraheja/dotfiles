@@ -14,33 +14,50 @@ then
 	exit 1
 fi
 
-echo ==== Copying PPA sources and updating repository
+if [ -d /etc/apt ]
+then
+	PKGMAN=deb
+	echo APT based package management.
+elif [-d /etc/zypp ]
+then
+	PKGMAN=rpm
+	echo Zypper based package management.
+else
+	echo Unknown package management. Exiting.
+	exit 1
+fi
 
-aptitude install mintsources
+echo ==== Add repositories and refresh
 
-rm -f /etc/apt/sources.list.d/google.list
-rm -f /etc/apt/sources.list.d/webmin.list
-# Google Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-# Google Music Manager
-echo "deb http://dl.google.com/linux/musicmanager/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-# Google Earth
-echo "deb http://dl.google.com/linux/earth/deb/ stable main" >> /etc/apt/sources.list.d/google.list
-# Webmin
-wget -q -O - http://www.webmin.com/jcameron-key.asc | apt-key add -
-echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
-echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
+if [ $DISTRO == "apt" ]
+then
+	aptitude install mintsources
 
-echo Installing new PPAs. To continue press ENTER.
-# NixNote (Evernote for Linux)
-add-apt-repository ppa:vincent-c/nevernote
-# Handbrake
-add-apt-repository ppa:stebbins/handbrake-releases
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
+	rm -f /etc/apt/sources.list.d/google.list
+	echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+	echo "deb http://dl.google.com/linux/musicmanager/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+	echo "deb http://dl.google.com/linux/earth/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 
-aptitude update
+	wget -q -O - http://www.webmin.com/jcameron-key.asc | apt-key add -
+	rm -f /etc/apt/sources.list.d/webmin.list
+	echo "deb http://download.webmin.com/download/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
+	echo "deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib" >> /etc/apt/sources.list.d/webmin.list
 
-echo ==== Upgrading system - first a safe-upgrade then full-upgrade to isolate changes
+	echo Installing new PPAs. To continue press ENTER.
+	add-apt-repository ppa:vincent-c/nevernote
+	add-apt-repository ppa:stebbins/handbrake-releases
+
+	aptitude update
+fi
+
+if [ $DISTRO == "rpm" ]
+then
+	zypper addrepo -r http://packman.inode.at/suse/12.3/packman.repo
+	zypper addrepo -r http://www.opensuse-guide.org/repo/12.3/libdvdcss.repo
+fi
+
+echo ==== Upgrading system
 aptitude -y -f --show-deps safe-upgrade
 aptitude -y -f --show-deps full-upgrade
 

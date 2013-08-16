@@ -15,8 +15,14 @@ do
   then
   	if [ -f ~/"$dotfile" ] || [ -d ~/"$dotfile" ] 
 	then 
-		echo Backing up existing ~/"$dotfile"
-		mv ~/"$dotfile" ~/"$dotfile".bak
+		if [ -h ~/"$dotfile" ]
+		then
+			echo Removing existing link ~/"$dotfile"
+			rm -f ~/"$dotfile"
+		else
+			echo Backing up existing ~/"$dotfile"
+			mv ~/"$dotfile" ~/"$dotfile".bak
+		fi
 	fi
 
   	if [[ "$1" != "-d" ]]
@@ -30,6 +36,6 @@ do
 done
 
 echo Start conky using : conky -c ~/.conky/conkyrc &
-echo Start x11vnc using: x11vnc --noncache
+echo Start x11vnc using: ssh -t -L 5900:rraheja-nas.local:5900 'x11vnc -localhost -display :0'
 
 echo Dotfiles setup complete on `date`.

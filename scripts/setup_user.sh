@@ -7,7 +7,7 @@ exec 2>&1
 
 # Copy certificates to root to enable password-less logins as sudo
 mkdir -p /root/.ssh
-cp ~/.ssh/id_rsa* /root/.ssh/
+cp ~/.ssh/id_rsa* /root/.ssh
 
 # Setup git
 echo Setting up Git global configuration.
