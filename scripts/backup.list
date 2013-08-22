@@ -15,6 +15,11 @@
 /etc/vsftpd.conf
 /etc/yum.repos.d
 /etc/yum/
+/etc/init.d/
+/etc/sysconfig/
+/etc/fstab
+/etc/sudoers
+/etc/sudoers.d/
 /home/rraheja/Desktop/
 /home/rraheja/Documents/
 /home/rraheja/Projects/
