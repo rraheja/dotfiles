@@ -1,4 +1,5 @@
 /etc/NetworkManager/NetworkManager.conf
+/etc/apt/
 /etc/exports
 /etc/forked-daapd.conf
 /etc/mdm/Init/Default
@@ -12,3 +13,17 @@
 /etc/ssh/sshd_config
 /etc/sysctl.conf
 /etc/vsftpd.conf
+/etc/yum.repos.d
+/etc/yum/
+/home/rraheja/Desktop/
+/home/rraheja/Documents/
+/home/rraheja/Projects/
+/home/rraheja/.ssh/
+/home/rraheja/.config/
+/home/rraheja/.conky/
+/home/rraheja/.lua/
+/home/rraheja/.gnome2/
+/home/rraheja/.kde/
+/home/rraheja/.linuxmint/
+/home/rraheja/.nevernote/
+/home/rraheja/.vnc/
