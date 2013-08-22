@@ -14,7 +14,4 @@ apt-key exportall > /etc/apt/repo.keys
 echo Archiving /etc configuration files
 tar -cvzf "$BACKUPDIR"/backup.tgz -T backup.list --exclude-caches-all --ignore-failed-read
 
-echo ==== COMMANDS FOR RESTORE
-echo Restore config files: sudo tar -C / -xvzf "$BACKUPDIR"/backup.tgz <optionally specific dir e.g. home/>
-
 echo Backup complete on `date`.
