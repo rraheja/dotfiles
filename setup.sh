@@ -1,6 +1,6 @@
 #!/bin/bash
-# Setup dotfiles using symlinks to home directory
-# Rajesh Raheja 08/09/2013
+# Setup dotfiles using symlinks to home directory, and git config
+# Rajesh Raheja 08/21/2013
 
 echo ==== Getting latest version of files
 git pull origin master
@@ -34,6 +34,17 @@ do
     	echo Skipping $dotfile
   fi
 done
+
+# Setup git
+echo Setting up Git global configuration.
+git config --global user.name  "Rajesh Raheja"
+git config --global user.email "rajesh.raheja@gmail.com"
+git config --global credential.helper 'cache --timeout=3600'
+git config --global push.default simple
+git config --global http.proxy  $http_proxy
+git config --global https.proxy $https_proxy
+git config --global no.proxy    $no_proxy
+git config --global --list
 
 echo Start conky using : conky -c ~/.conky/conkyrc &
 echo Start x11vnc using: ssh -t -L 5900:rraheja-nas.local:5900 'x11vnc -localhost -display :0'
