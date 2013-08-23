@@ -1,6 +1,6 @@
 #!/bin/bash
 # Backup script - backup location can be passed in as first argument.
-# Rajesh Raheja 08/21/2013
+# Rajesh Raheja 08/23/2013
 
 HOSTNAME=`hostname`
 BACKUPDIR=${1:-rraheja@rraheja-nas.local:/mnt/Share/Backups/"$HOSTNAME"}
@@ -11,7 +11,8 @@ exec 2>&1
 echo Exporting APT keys
 apt-key exportall > /etc/apt/repo.keys
 
-echo Archiving /etc configuration files
-tar -cvzf "$BACKUPDIR"/backup.tgz -T backup.list --exclude-caches-all --ignore-failed-read
+echo Archiving files
+tar -cvzf /tmp/backup.tgz -T backup.list --exclude-caches-all --ignore-failed-read
+scp /tmp/backup.tgz "$BACKUPDIR"
 
 echo Backup complete on `date`.
