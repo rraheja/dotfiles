@@ -99,5 +99,5 @@ endif
 " Personalization - Rajesh Raheja
 set nobackup
 set lbr
-set guifont=Courier_New:h11
+set guifont="DejaVu Sans Mono" 10
 colors torte
