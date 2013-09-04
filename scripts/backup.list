@@ -20,6 +20,8 @@
 /etc/fstab
 /etc/sudoers
 /etc/sudoers.d/
+/etc/modules
+/etc/modprobe.d/
 /home/rraheja/Desktop/
 /home/rraheja/Documents/
 /home/rraheja/Projects/
