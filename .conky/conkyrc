@@ -72,8 +72,7 @@ ${color D60650}${goto 75}Swap
 ${color FFFFFF}${goto 100}${voffset 25}${fs_used_perc /home}
 ${color FFFFFF}${goto 100}${fs_used_perc /}
 ${color D60650}${goto 100}Disk
-
 ${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
 ${color FFFFFF}${font Caviar Dreams:size=8}Processes: ${processes} ${color FFFFFF}${font Caviar Dreams:size=8}Running: ${running_processes}
-${color FFFFFF}${font Caviar Dreams:size=8}IP Address: ${addr wlan0}
-${color FFFFFF}${font Caviar Dreams:size=8}Network Speed kiBs: ${downspeed wlan0} / ${upspeed wlan0}
+${color FFFFFF}${font Caviar Dreams:size=8}IP Address: ${addr eth0}
+${color FFFFFF}${font Caviar Dreams:size=8}Network Speed kiBs: ${downspeed eth0} / ${upspeed eth0}
