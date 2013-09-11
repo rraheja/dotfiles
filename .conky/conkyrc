@@ -69,7 +69,7 @@ ${color FFFFFF}${goto 50}${voffset 23}${memperc}%
 ${color D60650}${goto 50}RAM
 ${color FFFFFF}${goto 75}${voffset 23}${swapperc}%
 ${color D60650}${goto 75}Swap
-${color FFFFFF}${goto 100}${voffset 25}${fs_used_perc /home}
+${color FFFFFF}${goto 100}${voffset 25}${fs_used_perc /mnt/Share}
 ${color FFFFFF}${goto 100}${fs_used_perc /}
 ${color D60650}${goto 100}Disk
 ${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
