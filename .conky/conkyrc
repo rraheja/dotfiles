@@ -54,7 +54,7 @@ lua_load ~/.lua/scripts/clock_rings.lua
 lua_draw_hook_pre clock_rings
 
 TEXT
-${voffset 0}${color D60650}${font Caviar Dreams:size=14}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font Caviar Dreams:size=38}${time %e}${font}
+${voffset 0}${color D60650}${font Caviar Dreams:size=14}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font Caviar Dreams:size=32}${time %e}${font}
 ${color FFFFFF}${voffset -30}${color FFFFFF}${font Caviar Dreams:size=16}${time %b}${font}${voffset -3} ${color FFFFFF}${font Caviar Dreams:size=18}${time %Y}${font}${color D60650}${hr}
 ${voffset 130}
 #$ {font Caviar Dreams:size=10}${alignr}HOME${font}
