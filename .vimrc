@@ -97,7 +97,17 @@ endif
 
 
 " Personalization - Rajesh Raheja
+
+execute pathogen#infect()
+filetype plugin indent on
+" autocmd VimEnter * NERDTree
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+
 set nobackup
 set lbr
-set guifont="DejaVu Sans Mono" 10
-colors torte
+set guifont=Courier\ New:h15
+colors slate
