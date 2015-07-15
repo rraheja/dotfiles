@@ -108,7 +108,7 @@ if [[ "$(__git_ps1) " (%s)" =~ \*\)$ ]]
     	# the state is clean, changes are commited
     fi)'$BIYellow" \w"$White" \$ $Color_Off"
 
-PS1="\[$White\]\u@\h \[$IGreen\]\$(__git_ps1) \[$BIYellow\]\w \[$White\]\$ \[$Color_Off\]"
+PS1="\[$Green\]\u@\h \[$IRed\]\$(__git_ps1) \[$BIBlue\]\w \[$White\]\$ \[$Color_Off\]"
 
 # Set network proxy
 # export http_proxy="http://changeme"
