@@ -15,15 +15,15 @@ do
      [ $dotfile != "LICENSE" ] &&
      [ $dotfile != "setup.sh" ]
   then
-  	if [ -f ~/"$dotfile" ] || [ -d ~/"$dotfile" ] 
+  	if [ -h $HOME/"$dotfile" ] || [ -f $HOME/"$dotfile" ] || [ -d $HOME/"$dotfile" ] 
 	then 
-		if [ -h ~/"$dotfile" ]
+		if [ -h $HOME/"$dotfile" ]
 		then
-			echo Removing existing link ~/"$dotfile"
-			rm -f ~/"$dotfile"
+			echo Removing existing link $HOME/"$dotfile"
+			rm -f $HOME/"$dotfile"
 		else
-			echo Backing up existing ~/"$dotfile"
-			mv ~/"$dotfile" ~/"$dotfile".bak
+			echo Backing up existing $HOME/"$dotfile"
+			mv $HOME/"$dotfile" $HOME/"$dotfile".bak
 		fi
 	fi
 
@@ -38,14 +38,15 @@ do
 done
 
 echo Linking .ssh to Dropbox folder ~/Documents/Dropbox/.ssh
-ln -s ~/Documents/Dropbox/.ssh "$HOME"/.ssh
+ln -fs $HOME/Documents/Dropbox/.ssh "$HOME"/.ssh
 
 osname=`uname`
 if [[ "$osname" == 'Darwin' ]]; then
-	echo Install remaining applications and tools using scripts in the scripts folder.
+	echo Install remaining applications and tools using scripts in the "workstation" repo.
 elif [[ "$osname" == 'Linux' ]]; then
-	echo Start conky using : conky -c ~/.conky/conkyrc &
+	echo Start conky using : conky -c $HOME/.conky/conkyrc &
 	echo Start x11vnc using: ssh -t -L 5900:localhost:5900 'x11vnc -localhost -display :0'
 fi
 
 echo Dotfiles setup complete on `date`.
+exit 0
