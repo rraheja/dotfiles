@@ -12,12 +12,12 @@ To install on a new machine, clone the repository under `~/.dotfiles` (or any ot
 
 Using SSL
 ```bash
-git clone git@github.com:rraheja/dotfiles.git ~/.dotfiles && cd dotfiles && ./setup.sh
+git clone git@github.com:rraheja/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
 ````
 
 Using HTTPS
 ```bash
-git clone https://github.com/rraheja/dotfiles.git ~/.dotfiles && cd dotfiles && ./setup.sh
+git clone https://github.com/rraheja/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./setup.sh
 ````
 
 Using wget
@@ -28,7 +28,8 @@ wget -O - https://github.com/rraheja/dotfiles.git | tar -xzv --strip-components 
 ./setup.sh
 ````
 Setup creates symlinks from the home directory to the dotfiles directory, so any updates are immediately effective.
-OPTIONAL: Install software applications for a productive workstation experience using the "workstation" repo.
+
+*OPTIONAL:* Install software applications for a productive workstation experience using the "workstation" repo.
 
 UnInstall
 ---------
