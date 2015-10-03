@@ -1,8 +1,6 @@
-#
 # Bash initialization
-#
 # Rajesh Raheja
-#
+# October 2015
 
 # color definitions
 
@@ -79,8 +77,6 @@ On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
-export PATH="$PATH:~/Applications/bin"
-
 # git bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -89,7 +85,6 @@ fi
 if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
-
 
 # Set git prompt
 GIT_PS1_SHOWDIRTYSTATE="true"
@@ -110,8 +105,7 @@ if [[ "$(__git_ps1) " (%s)" =~ \*\)$ ]]
 
 PS1="\[$Green\]\u@\h \[$IRed\]\$(__git_ps1) \[$BIBlue\]\w \[$White\]\$ \[$Color_Off\]"
 
-# Set network proxy
+# Set network proxy if needed
 # export http_proxy="http://changeme"
 # export https_proxy=$http_proxy
 # export no_proxy="localhost, 127.0.0.1"
-

@@ -10,25 +10,25 @@ Installation
 ------------
 To install on a new machine, clone the repository under `~/Projects/dotfiles` (or any other location):
 
-Using SSL (preferred since it does not prompt for username/password with proper key setup)
+Using SSL
 ```bash
 cd ~/Projects && git clone git@github.com:rraheja/dotfiles.git && cd dotfiles && source ./setup.sh
 ````
 
-Using HTTPS (alternative to SSL)
+Using HTTPS
 ```bash
 cd ~/Projects && git clone https://github.com/rraheja/dotfiles.git && cd dotfiles && source ./setup.sh
 ````
 
-If `git` is not available (fresh install), use `wget` to retrieve the repository:
+Using wget
 
 ````bash
-mkdir -p ~/Projects/dotfiles
-cd ~/Projects/dotfiles
+mkdir -p ~/Projects/dotfiles && cd ~/Projects/dotfiles
 wget -O - https://github.com/rraheja/dotfiles.git | tar -xzv --strip-components 1
 source ./setup.sh
 ````
 Setup creates symlinks from the home directory to the dotfiles directory, so any updates are immediately effective.
+Once dotfiles are installed, install the software applications using the scripts in the "scripts" subdirectory.
 
 UnInstall
 ---------
