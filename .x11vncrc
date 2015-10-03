@@ -1,3 +1,3 @@
 forever
-rfbauth /home/rraheja/.vnc/passwd
+rfbauth .vnc/passwd
 display :0
