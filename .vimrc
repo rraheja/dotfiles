@@ -98,7 +98,6 @@ endif
 
 " Personalization - Rajesh Raheja
 
-execute pathogen#infect()
 filetype plugin indent on
 " autocmd VimEnter * NERDTree
 " autocmd StdinReadPre * let s:std_in=1
