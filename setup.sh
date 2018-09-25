@@ -1,10 +1,9 @@
 #!/bin/bash
 # Setup dotfiles using symlinks to home directory, and git config
 # Rajesh Raheja
-# October 2015
+# September 2018
 
-echo Getting latest version of files...
-git pull origin master
+cd ~/Git/dotfiles
 
 for dotfile in * .[^.] .??*
 do
@@ -21,6 +20,7 @@ do
 		then
 			echo Removing existing link $HOME/"$dotfile"
 			rm -f $HOME/"$dotfile"
+			mv $HOME/"$dotfile".bak $HOME/"$dotfile"
 		else
 			echo Backing up existing $HOME/"$dotfile"
 			mv $HOME/"$dotfile" $HOME/"$dotfile".bak
@@ -37,8 +37,8 @@ do
   fi
 done
 
-echo Linking .ssh to Dropbox folder ~/Documents/Dropbox/.ssh
-ln -fs $HOME/Documents/Dropbox/.ssh "$HOME"/.ssh
+echo Linking .ssh folder
+ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
 
 osname=`uname`
 if [[ "$osname" == 'Darwin' ]]; then
