@@ -3,7 +3,7 @@
 # Rajesh Raheja
 # September 2018
 
-cd ~/Git/dotfiles
+cd ~/Github/dotfiles
 
 for dotfile in * .[^.] .??*
 do
@@ -38,6 +38,7 @@ do
 done
 
 echo Linking .ssh folder
+mv "$HOME"/.ssh "$HOME"/.ssh.bak
 ln -fs $HOME/Documents/Google\ Drive/Software/ssh "$HOME"/.ssh
 
 osname=`uname`
