@@ -37,9 +37,14 @@ do
   fi
 done
 
-echo Linking .ssh folder
-mv "$HOME"/.ssh "$HOME"/.ssh.bak
-ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
+if [ -d $HOME/Google\ Drive ]
+then
+	echo Linking .ssh folder from Google Drive
+	mv "$HOME"/.ssh "$HOME"/.ssh.bak
+	ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
+else
+	echo Google Drive not installed. Skipping linking of .ssh
+fi
 
 osname=`uname`
 if [[ "$osname" == 'Darwin' ]]; then
