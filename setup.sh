@@ -39,7 +39,7 @@ done
 
 echo Linking .ssh folder
 mv "$HOME"/.ssh "$HOME"/.ssh.bak
-ln -fs $HOME/Documents/Google\ Drive/Software/ssh "$HOME"/.ssh
+ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
 
 osname=`uname`
 if [[ "$osname" == 'Darwin' ]]; then
