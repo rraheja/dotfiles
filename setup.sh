@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup dotfiles using symlinks to home directory, and git config
 # Rajesh Raheja
-# September 2018
+# July 2019
 
 cd ~/Github/dotfiles
 
@@ -37,14 +37,15 @@ do
   fi
 done
 
-if [ -d $HOME/Google\ Drive ]
-then
-	echo Linking .ssh folder from Google Drive
-	mv "$HOME"/.ssh "$HOME"/.ssh.bak
-	ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
-else
-	echo Google Drive not installed. Skipping linking of .ssh
-fi
+# Removing auto setup of ssh to avoid security issues
+# if [ -d $HOME/Google\ Drive ]
+# then
+#	echo Linking .ssh folder from Google Drive
+#	mv "$HOME"/.ssh "$HOME"/.ssh.bak
+#	ln -fs $HOME/Google\ Drive/Software/ssh "$HOME"/.ssh
+# else
+#	echo Google Drive not installed. Skipping linking of .ssh
+# fi
 
 osname=`uname`
 if [[ "$osname" == 'Darwin' ]]; then
